@@ -22,3 +22,5 @@ Model: Criamos o objeto Aluno, que será representado como uma entidade no banco
 
 No Insomnia, criamos uma coleção para simular as requisições do frontend, já que não temos o código frontend para este projeto. Dentro dessa coleção, foi criada a requisição "criarAluno", utilizando o método HTTP POST. Nessa requisição, utilizamos a URL "http://localhost:8080/alunos", que corresponde ao endpoint definido no Controller. Definimos o corpo da requisição como JSON (para que o @RequestBody possa convertê-lo para Java), e dentro desse JSON incluímos informações como nome, e-mail e CPF.
 
+# VER 1 
+Nesta versão o Professor foi criado, incrementação de funções no controller necessitadas.
