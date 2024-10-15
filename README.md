@@ -1,5 +1,4 @@
 # API-Aluno-Online
-Olá, Professor. Boa tarde! Estou tendo dificuldades com banco de dados, mas tentarei explicar o máximo que entendi sobre a última atividade.
 
 No Spring Boot:
 
