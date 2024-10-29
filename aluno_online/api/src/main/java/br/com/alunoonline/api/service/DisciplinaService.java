@@ -40,25 +40,25 @@ public class DisciplinaService {
 
     public void atualizarDisciplinaPorID(Long id, Disciplina disciplina) {
 
-        //* Verificar se existe no Banco de Dados
+
         Optional<Disciplina> disciplinaDoBancoDeDados = buscarDisciplinaPorId(id);
 
-        //* Caso não exista:
+
         if (disciplinaDoBancoDeDados.isEmpty()) {
 
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Disciplina não encontrada no banco de dados");
 
         }
 
-        //* Se chegar aqui quer dizer que existe a disciplina, então:
+
 
         Disciplina disciplinaEditado = disciplinaDoBancoDeDados.get();
 
-        // Com esse professor editado de cima, faço os sets necessários para atualizar os atributos
+
         disciplinaEditado.setNome(disciplina.getNome());
         disciplinaEditado.setProfessor(disciplina.getProfessor());
 
-        // Com o professor totalmente editado acima, devolve ele atualizado ao banco de dados
+
         disciplinaRepository.save(disciplinaEditado);
 
     }
