@@ -19,11 +19,11 @@ public class MatriculaAluno implements Serializable {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "aluno_id")
+    @JoinColumn(name = "aluno_id", nullable = false)
     private Aluno aluno;
 
     @ManyToOne
-    @JoinColumn(name = "disciplina_id")
+    @JoinColumn(name = "disciplina_id", nullable = false)
     private Disciplina disciplina;
 
     private Double nota1;

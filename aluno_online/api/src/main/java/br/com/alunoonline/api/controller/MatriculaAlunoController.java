@@ -1,5 +1,6 @@
 package br.com.alunoonline.api.controller;
 
+import br.com.alunoonline.api.enums.MatriculoAlunoStatusEnum;
 import br.com.alunoonline.api.model.MatriculaAluno;
 import br.com.alunoonline.api.service.MatriculaAlunoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,7 @@ public class MatriculaAlunoController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void criarMatricula(@RequestBody MatriculaAluno matriculaAluno){
+        matriculaAluno.setStatus(MatriculoAlunoStatusEnum.MATRICULADO);
         matriculaAlunoService.criarMatricula(matriculaAluno);
     }
 }
