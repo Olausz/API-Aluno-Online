@@ -1,5 +1,7 @@
 # API-Aluno-Online
 # Resumo
+Este projeto tem como objetivo simular um sistema escolar, onde informações sobre matérias, notas, alunos e professores serão gerenciadas e relacionadas entre si. O sistema foi desenvolvido como uma API RESTful utilizando o framework Spring, seguindo boas práticas de arquitetura e organização.
+<br>
 
 
 
