@@ -1,12 +1,15 @@
 # API-Aluno-Online
 # Resumo
 Este projeto tem como objetivo simular um sistema escolar, onde informações sobre matérias, notas, alunos e professores serão gerenciadas e relacionadas entre si. O sistema foi desenvolvido como uma API RESTful utilizando o framework Spring, seguindo boas práticas de arquitetura e organização.
-<br>
+# Tecnologias Usadas
 
+Java e Spring framework: Desenvolvimento Back-end.
+IntelliJ IDEA: IDE usada.
+Insominia: Requisições HTTP simulação do Front-end.
+PostgreSQL: Banco de dados.
+Dbeaver: SGBD usado.
 
-
-
-
+# Funcionamento da API
 Criamos 4 pacotes que servem para o funcionamento da API:
 
 Controller: Serve para receber as informações do frontend e repassá-las para outras camadas. Injetamos as informações do Repository e utilizamos as seguintes anotações:
