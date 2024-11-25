@@ -3,11 +3,11 @@
 Este projeto tem como objetivo simular um sistema escolar, onde informações sobre matérias, notas, alunos e professores serão gerenciadas e relacionadas entre si. O sistema foi desenvolvido como uma API RESTful utilizando o framework Spring, seguindo boas práticas de arquitetura e organização.
 # Tecnologias Usadas
 
-Java e Spring framework: Desenvolvimento Back-end.
-IntelliJ IDEA: IDE usada.
-Insominia: Requisições HTTP simulação do Front-end.
-PostgreSQL: Banco de dados.
-Dbeaver: SGBD usado.
+Java e Spring framework: Desenvolvimento Back-end.<br>
+IntelliJ IDEA: IDE usada.<br.
+Insominia: Requisições HTTP simulação do Front-end.<br>
+PostgreSQL: Banco de dados.<br>
+Dbeaver: SGBD usado.<br>
 
 # Funcionamento da API
 Criamos 4 pacotes que servem para o funcionamento da API:
