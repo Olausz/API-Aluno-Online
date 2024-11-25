@@ -1,8 +1,15 @@
 # API-Aluno-Online
-Olá, Professor. Boa tarde! Estou tendo dificuldades com banco de dados, mas tentarei explicar o máximo que entendi sobre a última atividade.
+# Resumo
+Este projeto tem como objetivo simular um sistema escolar, onde informações sobre matérias, notas, alunos e professores serão gerenciadas e relacionadas entre si. O sistema foi desenvolvido como uma API RESTful utilizando o framework Spring, seguindo boas práticas de arquitetura e organização.
+# Tecnologias Usadas
 
-No Spring Boot:
+Java e Spring framework: Desenvolvimento Back-end.<br>
+IntelliJ IDEA: IDE usada.<br.
+Insominia: Requisições HTTP simulação do Front-end.<br>
+PostgreSQL: Banco de dados.<br>
+Dbeaver: SGBD usado.<br>
 
+# Funcionamento da API
 Criamos 4 pacotes que servem para o funcionamento da API:
 
 Controller: Serve para receber as informações do frontend e repassá-las para outras camadas. Injetamos as informações do Repository e utilizamos as seguintes anotações:
@@ -21,5 +28,4 @@ Model: Criamos o objeto Aluno, que será representado como uma entidade no banco
 @Entity: Informa que a classe no código será representada como uma tabela no banco de dados.
 
 No Insomnia, criamos uma coleção para simular as requisições do frontend, já que não temos o código frontend para este projeto. Dentro dessa coleção, foi criada a requisição "criarAluno", utilizando o método HTTP POST. Nessa requisição, utilizamos a URL "http://localhost:8080/alunos", que corresponde ao endpoint definido no Controller. Definimos o corpo da requisição como JSON (para que o @RequestBody possa convertê-lo para Java), e dentro desse JSON incluímos informações como nome, e-mail e CPF.
-
 
