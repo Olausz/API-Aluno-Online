@@ -20,46 +20,36 @@ public class DisciplinaService {
         disciplinaRepository.save(disciplina);
     }
 
+    public List<Disciplina> listarDisciplinasDoProf(Long professorId) {
+        return disciplinaRepository.findByProfessorId(professorId);
+    }
+
     public List<Disciplina> listarTodosDisciplinas() {
-
         return disciplinaRepository.findAll();
-
     }
 
     public Optional<Disciplina> buscarDisciplinaPorId(Long id) {
-
         return disciplinaRepository.findById(id);
-
     }
 
     public void deletarDisciplinaPorId(Long id) {
-
         disciplinaRepository.deleteById(id);
-
     }
 
     public void atualizarDisciplinaPorID(Long id, Disciplina disciplina) {
 
-
         Optional<Disciplina> disciplinaDoBancoDeDados = buscarDisciplinaPorId(id);
-
 
         if (disciplinaDoBancoDeDados.isEmpty()) {
 
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Disciplina não encontrada no banco de dados");
-
         }
 
-
-
         Disciplina disciplinaEditado = disciplinaDoBancoDeDados.get();
-
 
         disciplinaEditado.setNome(disciplina.getNome());
         disciplinaEditado.setProfessor(disciplina.getProfessor());
 
-
         disciplinaRepository.save(disciplinaEditado);
-
     }
 }

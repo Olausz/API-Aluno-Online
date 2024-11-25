@@ -17,7 +17,6 @@ public class ProfessorService {
     ProfessorRepository professorRepository;
 
     public void criarProfessor(Professor professor){
-
         professorRepository.save(professor);
     }
 
@@ -35,7 +34,6 @@ public class ProfessorService {
 
     public void atualizarProfessorPorId(Long id, Professor professor){
         Optional<Professor> professorDoBancoDeDados = buscarProfessorPorId(id);
-
         if (professorDoBancoDeDados.isEmpty()) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Professor não encontrado no banco de dados");
 
