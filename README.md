@@ -27,5 +27,7 @@ Model: Criamos o objeto Aluno, que será representado como uma entidade no banco
 @AllArgsConstructor: Cria um construtor com todos os argumentos. Esses dois construtores facilitam a criação automática de objetos Aluno.
 @Entity: Informa que a classe no código será representada como uma tabela no banco de dados.
 
+
+
 No Insomnia, criamos uma coleção para simular as requisições do frontend, já que não temos o código frontend para este projeto. Dentro dessa coleção, foi criada a requisição "criarAluno", utilizando o método HTTP POST. Nessa requisição, utilizamos a URL "http://localhost:8080/alunos", que corresponde ao endpoint definido no Controller. Definimos o corpo da requisição como JSON (para que o @RequestBody possa convertê-lo para Java), e dentro desse JSON incluímos informações como nome, e-mail e CPF.
 
