@@ -34,3 +34,4 @@ Config: Na pasta Config, está configurado o Swagger, uma ferramenta amplamente 
 
 No Insomnia, criamos uma coleção para simular as requisições do frontend, já que não temos o código frontend para este projeto. Dentro dessa coleção, foi criada a requisição "criarAluno", utilizando o método HTTP POST. Nessa requisição, utilizamos a URL "http://localhost:8080/alunos", que corresponde ao endpoint definido no Controller. Definimos o corpo da requisição como JSON (para que o @RequestBody possa convertê-lo para Java), e dentro desse JSON incluímos informações como nome, e-mail e CPF.
 
+(API Feita na Branch VER1)
