@@ -15,11 +15,11 @@ public class DisciplinaController {
 
     @Autowired
     DisciplinaService disciplinaService;
+
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     public void criarDisciplina(@RequestBody Disciplina disciplina){
         disciplinaService.criarDisciplina(disciplina);
-
     }
 
     @GetMapping
