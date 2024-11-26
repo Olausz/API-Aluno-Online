@@ -1,7 +1,7 @@
 package br.com.alunoonline.api.service;
 
 import br.com.alunoonline.api.dtos.AtualizarNotasRequest;
-import br.com.alunoonline.api.dtos.DisciplinaAlunoResponse;
+import br.com.alunoonline.api.dtos.DisciplinasAlunoResponse;
 import br.com.alunoonline.api.dtos.HistoricoAlunoResponse;
 import br.com.alunoonline.api.enums.MatriculoAlunoStatusEnum;
 import br.com.alunoonline.api.model.MatriculaAluno;
@@ -11,7 +11,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.lang.module.ResolutionException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -73,41 +72,41 @@ public class MatriculaAlunoService {
         }
     }
 
-    public HistoricoAlunoResponse emitirHistorico(Long alunoId) {
+   public HistoricoAlunoResponse emitirHistorico(Long alunoId) {
         List<MatriculaAluno> matriculasDoAluno = matriculaAlunoRepository.findByAlunoId(alunoId);
 
-        if (matriculasDoAluno.isEmpty()){
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Esse aluno não possui matriculas");
+        if (matriculasDoAluno.isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Esse aluno não possui matricula!");
         }
 
         HistoricoAlunoResponse historicoAluno = new HistoricoAlunoResponse();
         historicoAluno.setNomeAluno(matriculasDoAluno.get(0).getAluno().getNome());
-        historicoAluno.setEmailAluno(matriculasDoAluno.get(0).getAluno().getEmail());
         historicoAluno.setCpfAluno(matriculasDoAluno.get(0).getAluno().getCpf());
+        historicoAluno.setEmailAluno(matriculasDoAluno.get(0).getAluno().getEmail());
 
-        List<DisciplinaAlunoResponse> disciplinasList = new ArrayList<>();
+        List<DisciplinasAlunoResponse> disciplinasList = new ArrayList<>();
 
         for (MatriculaAluno matriculaAluno : matriculasDoAluno) {
-            DisciplinaAlunoResponse disciplinaAlunoResponse = new DisciplinaAlunoResponse();
-            disciplinaAlunoResponse.setNomeDisciplina(matriculaAluno.getDisciplina().getNome());
-            disciplinaAlunoResponse.setNomeProfessor(matriculaAluno.getDisciplina().getProfessor().getNome());
-            disciplinaAlunoResponse.setNota1(matriculaAluno.getNota1());
-            disciplinaAlunoResponse.setNota1(matriculaAluno.getNota2());
+            DisciplinasAlunoResponse disciplinasAlunoResponse = new DisciplinasAlunoResponse();
+            disciplinasAlunoResponse.setNomeDisciplina(matriculaAluno.getDisciplina().getNome());
+            disciplinasAlunoResponse.setNomeProfessor(matriculaAluno.getDisciplina().getProfessor().getNome());
+            disciplinasAlunoResponse.setNota1(matriculaAluno.getNota1());
+            disciplinasAlunoResponse.setNota2(matriculaAluno.getNota2());
 
-            if (matriculaAluno.getNota1() != null && matriculaAluno.getNota2() != null) {
-                disciplinaAlunoResponse.setMedia((matriculaAluno.getNota1() + matriculaAluno.getNota2()) / 2.0);
+            if (matriculaAluno.getNota1() !=null && matriculaAluno.getNota2() != null) {
+                disciplinasAlunoResponse.setMedia((matriculaAluno.getNota1() + matriculaAluno.getNota2()) / 2.0 );
             } else {
-                disciplinaAlunoResponse.setMedia(null);
+                disciplinasAlunoResponse.setMedia(null);
             }
 
-            disciplinaAlunoResponse.setStatus(matriculaAluno.getStatus());
-        }
+            disciplinasAlunoResponse.setStatus(matriculaAluno.getStatus());
 
-        historicoAluno.setDisciplinaAlunoResponses(disciplinasList);
+            disciplinasList.add(disciplinasAlunoResponse);
+
+        }
+        historicoAluno.setDisciplinasAlunoResponses(disciplinasList);
 
         return historicoAluno;
-
-    }
-
+   }
 
 }
