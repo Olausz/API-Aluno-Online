@@ -4,7 +4,7 @@ Este projeto tem como objetivo simular um sistema escolar, onde informações so
 # Tecnologias Usadas
 
 Java e Spring framework: Desenvolvimento Back-end.<br>
-IntelliJ IDEA: IDE usada.<br.
+IntelliJ IDEA: IDE usada.<br>
 Insominia: Requisições HTTP simulação do Front-end.<br>
 PostgreSQL: Banco de dados.<br>
 Dbeaver: SGBD usado.<br>
